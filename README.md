@@ -21,9 +21,9 @@
 
 ## Deployment notes
 1. Deployed Nebari 2023.5.1 on AWS using username/password for authentication
-2. In Keycloak, added a `users` group, with same permissions as `analyst` (allowing dask gateway cluster creation)
-3. We created a CSV list of users with columns: first_name, last_name, email
-4. Converted the CSV to a JSON file importable into keycloak using `generate_keycloak.ipynb` in this repo
+2. In Keycloak, added a `users` group, with same permissions as `analyst` (allowing dask gateway cluster creation). To do this go to the `users` group, select Role Mapping, at the bottom of that page is a Client Roles drop down that you can use to add and remove roles for that group.  Add `dask-developer`. 
+4. We created a CSV list of users with columns: first_name, last_name, email
+5. Converted the CSV to a JSON file importable into keycloak using `generate_keycloak.ipynb` in this repo
 
 5. At the time of the May 13 workshop, destroying on AWS with `nebari destroy` didn't everything:
   ```
